@@ -1,0 +1,300 @@
+/* Registration Page Styles */
+.register-page {
+    min-height: calc(100vh - 60px);
+    background: #f5f7fa;
+    padding: 2rem 0;
+}
+
+.register-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 2rem;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.form-header {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.form-header h1 {
+    font-size: 2rem;
+    color: #333;
+    margin-bottom: 0.5rem;
+}
+
+.form-header p {
+    color: #666;
+    font-size: 1.1rem;
+}
+
+/* Form Styles */
+.register-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.form-row {
+    display: flex;
+    gap: 1.5rem;
+}
+
+.form-group {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+label {
+    font-size: 0.9rem;
+    color: #555;
+    font-weight: 500;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="password"],
+select,
+textarea {
+    padding: 0.75rem 1rem;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    font-size: 1rem;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+    outline: none;
+    border-color: #1a73e8;
+    box-shadow: 0 0 0 3px rgba(26, 115, 232, 0.1);
+}
+
+/* Password Input */
+.password-input {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.toggle-password {
+    position: absolute;
+    right: 1rem;
+    background: none;
+    border: none;
+    color: #666;
+    cursor: pointer;
+    padding: 0;
+}
+
+.toggle-password:hover {
+    color: #333;
+}
+
+/* Profile Picture Upload */
+.profile-upload {
+    position: relative;
+    width: 100%;
+    min-height: 200px;
+    border: 2px dashed #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.profile-upload input[type="file"] {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    cursor: pointer;
+    z-index: 2;
+}
+
+.upload-placeholder {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    color: #666;
+    padding: 2rem;
+}
+
+.upload-placeholder i {
+    font-size: 2.5rem;
+    color: #1a73e8;
+}
+
+.upload-format {
+    font-size: 0.85rem;
+    color: #999;
+}
+
+.preview-container {
+    position: relative;
+    width: 100%;
+    height: 200px;
+}
+
+.preview-container img {
+  /*  width: 100%; */
+    height: 100%;
+    object-fit: cover;
+}
+
+.remove-image {
+    position: absolute;
+    top: 0.5rem;
+    right: 0.5rem;
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.remove-image:hover {
+    background: rgba(0, 0, 0, 0.7);
+}
+
+/* Checkbox Styles */
+.checkbox-container {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    cursor: pointer;
+    font-size: 0.9rem;
+    color: #666;
+}
+
+.checkbox-container input {
+    width: 18px;
+    height: 18px;
+}
+
+.checkbox-container a {
+    color: #1a73e8;
+    text-decoration: none;
+}
+
+.checkbox-container a:hover {
+    text-decoration: underline;
+}
+
+/* Submit Button */
+.register-btn {
+    background: #1a73e8;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    padding: 1rem;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin-top: 1rem;
+}
+
+.register-btn:hover {
+    background: #1557b0;
+}
+
+/* Login Link */
+.login-link {
+    text-align: center;
+    margin-top: 1.5rem;
+    color: #666;
+    font-size: 0.9rem;
+}
+
+.login-link a {
+    color: #1a73e8;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.login-link a:hover {
+    text-decoration: underline;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .register-container {
+        margin: 1rem;
+        padding: 1.5rem;
+    }
+
+    .form-row {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .form-header h1 {
+        font-size: 1.75rem;
+    }
+
+    .form-header p {
+        font-size: 1rem;
+    }
+}
+
+/* Error States */
+.form-group.error input,
+.form-group.error select,
+.form-group.error textarea {
+    border-color: #dc3545;
+}
+
+.form-group.error .error-message {
+    color: #dc3545;
+    font-size: 0.85rem;
+    margin-top: 0.25rem;
+}
+
+/* Success States */
+.form-group.success input,
+.form-group.success select,
+.form-group.success textarea {
+    border-color: #28a745;
+}
+
+/* Loading State */
+.register-btn.loading {
+    background: #ccc;
+    cursor: not-allowed;
+    position: relative;
+}
+
+.register-btn.loading::after {
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    border: 2px solid #fff;
+    border-radius: 50%;
+    border-top-color: transparent;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}

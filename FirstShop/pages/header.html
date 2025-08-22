@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Header</title>
+    <link rel="stylesheet" href="../css/header-footer.css">
+</head>
+<body>
+      <header class="header">
+        <div class="header-container">            
+            <a href="pages/product.html" class="brand">
+                <img src="../images/logo.svg" alt="FirstShop" class="brand-logo">
+                <span class="brand-name">FirstShop</span>
+            </a>
+            <div class="search-container">
+                <div class="search-box">
+                    <input type="text" id="searchInput" placeholder="Search products...">
+                    <button type="button" id="searchButton">
+                        <i class="fas fa-search"></i>
+                    </button>
+                </div>
+                <div class="search-results" id="searchResults">
+                    <!-- Search results will be populated dynamically -->
+                </div>
+            </div>
+            <a href="pages/cart.html" class="cart-option">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span class="cart-name">Cart</span>
+                    <span class="cart-count">0</span>
+            </a>
+            <div class="nav-options" id="navOptions">               
+                <div class="auth-options">
+                    <a href="pages/login.html" class="auth-button login-btn">Login</a>
+                    <a href="pages/register.html" class="auth-button register-btn">Register</a>
+                </div>
+            </div>
+             <button class="mobile-menu-toggle" id="mobileMenuToggle">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+
+        <!-- Mobile Navigation Menu -->
+       
+         <div class="mobile-nav" id="mobileNav">
+            <div class="mobile-nav-content">
+                <div class="mobile-nav-footer">
+                    <div class="mobile-auth-options">
+                        <a href="pages/login.html" class="mobile-auth-button">
+                            <i class="fas fa-sign-in-alt"></i>
+                            Login
+                        </a>
+                        <a href="pages/register.html" class="mobile-auth-button">
+                            <i class="fas fa-user-plus"></i>
+                            Register
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+</body>
+</html>

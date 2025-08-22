@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Products</title>
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/header-footer.css">
+    <link rel="stylesheet" href="../css/product.css">
+    <link rel="stylesheet" href="../css/mobile.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <header class="header"></header>
+    <main class="product-page">
+        <div class="mobile-category-dropdown">
+            <select id="mobileCategorySelect" class="category-select">
+                <option value="all">All Categories</option>
+                <!-- Categories will be populated dynamically -->
+            </select>
+        </div>
+
+        <div class="container">
+            <!-- Sidebar Categories (Desktop) -->
+            <aside class="sidebar" id="sidebar">
+                <div class="sidebar-header">
+                    <h2 class="sidebar-title">Categories</h2>
+                </div>
+                
+                <div class="category-section">
+                    <div class="section-header mobile-collapsible">
+                        <h3>Browse Categories</h3>
+                        <i class="fas fa-chevron-down collapse-icon"></i>
+                    </div>
+                    <ul class="category-list collapse-content">
+                        <!-- Categories will be populated dynamically -->
+                    </ul>
+                </div>
+
+                <!-- Filter Section -->
+                <div class="filter-section collapsible">
+                    <div class="section-header" onclick="toggleSection(this)">
+                        <h3>Price Range</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="section-content">
+                        <div class="price-range">
+                        <input type="number" class="price-input" placeholder="Min" min="0">
+                        <span class="price-separator">-</span>
+                        <input type="number" class="price-input" placeholder="Max" min="0">
+                    </div>
+                    <button class="apply-filter-btn">Apply Filter</button>
+                </div>
+                
+                <div class="filter-section">
+                    <h3 class="filter-title">Availability</h3>
+                    <div class="filter-options">
+                        <label class="filter-option">
+                            <input type="checkbox" checked>
+                            <span class="filter-tag">In Stock</span>
+                        </label>
+                        <label class="filter-option">
+                            <input type="checkbox">
+                            <span class="filter-tag">Pre-order</span>
+                        </label>
+                    </div>
+                </div>
+            </aside>
+
+            <!-- Product Section -->
+            <section class="product-section">
+                <div class="product-header">
+                    <button class="mobile-filter-btn" id="mobileFilterBtn">
+                        <i class="fas fa-filter"></i>
+                        Filters
+                    </button>
+                    <div class="product-sort">
+                        <select class="sort-select">
+                            <option value="popular">Most Popular</option>
+                            <option value="price-low">Price: Low to High</option>
+                            <option value="price-high">Price: High to Low</option>
+                            <option value="newest">Newest First</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="product-grid" id="productGrid">
+                    <!-- Products will be dynamically added here -->
+                </div>
+
+                <div class="pagination" id="pagination">
+                    <!-- Pagination will be dynamically added here -->
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer class="footer"></footer>
+
+    <div class="sidebar-overlay" id="sidebarOverlay"></div>
+    
+    <!-- Core scripts -->
+    <script src="../js/header.js"></script>
+    <script src="../js/footer.js"></script>
+    <script src="../js/main.js"></script>
+    <script>
+        // Initialize products when header.js has loaded
+        const initializeProducts = async () => {
+            if (!window.shopProducts) {
+                console.error('Shop products not initialized');
+                return;
+            }
+            
+            try {
+                await window.shopProducts.load();
+                console.log('Products loaded:', window.shopProducts.getAll());
+                return true;
+            } catch (error) {
+                console.error('Error loading products:', error);
+                return false;
+            }
+        };
+
+        document.addEventListener('DOMContentLoaded', async function() {
+            // Try to initialize products
+            const productsLoaded = await initializeProducts();
+            if (!productsLoaded) {
+                document.getElementById('productGrid').innerHTML = `
+                    <div style="text-align: center; width: 100%; padding: 2rem; color: red;">
+                        <p>Error loading products. Please try refreshing the page.</p>
+                    </div>
+                `;
+                return;
+            }
+            
+            const mobileSelect = document.getElementById('mobileCategorySelect');
+            const categoryList = document.querySelector('.category-list');
+            
+            // Sample categories - replace with your actual categories
+            const categories = [
+                { id: 'all', name: 'All Categories', icon: 'th-large' },
+                { id: 'electronics', name: 'Electronics', icon: 'laptop' },
+                { id: 'fashion', name: 'Fashion', icon: 'tshirt' },
+                { id: 'home', name: 'Home & Living', icon: 'home' },
+                { id: 'beauty', name: 'Beauty', icon: 'spa' },
+                { id: 'sports', name: 'Sports & Outdoors', icon: 'futbol' }
+            ];
+
+            // Populate mobile dropdown
+            function populateMobileDropdown() {
+                const options = categories.map(cat => 
+                    `<option value="${cat.id}">${cat.name}</option>`
+                ).join('');
+                mobileSelect.innerHTML = options;
+            }
+
+            // Populate desktop category list
+            function populateDesktopCategories() {
+                const categoryItems = categories.map(cat => `
+                    <li class="category-item" data-category="${cat.id}">
+                        <span class="category-link">
+                            <i class="fas fa-${cat.icon}"></i>
+                            ${cat.name}
+                        </span>
+                    </li>
+                `).join('');
+                categoryList.innerHTML = categoryItems;
+
+                // Add click handlers to desktop categories
+                categoryList.querySelectorAll('.category-item').forEach(item => {
+                    item.addEventListener('click', function() {
+                        const category = this.dataset.category;
+                        filterProducts(category);
+                        updateActiveCategory(category);
+                    });
+                });
+            }
+
+            // Update active category in both mobile and desktop
+            function updateActiveCategory(selectedCategory) {
+                // Update mobile dropdown
+                mobileSelect.value = selectedCategory;
+
+                // Update desktop categories
+                categoryList.querySelectorAll('.category-item').forEach(item => {
+                    const categoryLink = item.querySelector('.category-link');
+                    if (item.dataset.category === selectedCategory) {
+                        categoryLink.classList.add('active');
+                    } else {
+                        categoryLink.classList.remove('active');
+                    }
+                });
+            }
+
+            // Handle mobile category change
+            mobileSelect.addEventListener('change', function() {
+                const selectedCategory = this.value;
+                filterProducts(selectedCategory);
+                updateActiveCategory(selectedCategory);
+            });
+
+            // Initialize categories
+            populateMobileDropdown();
+            populateDesktopCategories();
+            updateActiveCategory('all'); // Set initial active category
+            
+            // Toggle mobile menu
+            function toggleMobileMenu() {
+                header.classList.toggle('nav-open');
+                mobileNav.classList.toggle('active');
+                const isOpen = mobileNav.classList.contains('active');
+                mobileMenuToggle.innerHTML = isOpen ? 
+                    '<i class="fas fa-times"></i>' : 
+                    '<i class="fas fa-bars"></i>';
+                
+                // Prevent body scroll when menu is open
+                document.body.style.overflow = isOpen ? 'hidden' : '';
+            }
+
+            // Toggle category list
+            function toggleCategoryList() {
+                mobileCategoryList.classList.toggle('expanded');
+                const icon = mobileSectionHeader.querySelector('i');
+                icon.style.transform = mobileCategoryList.classList.contains('expanded') ?
+                    'rotate(180deg)' : 'rotate(0)';
+            }
+
+            // Get elements
+            const mobileMenuToggle = document.getElementById('mobileMenuToggle');
+            const mobileSectionHeader = document.querySelector('.mobile-collapsible');
+            const mobileNav = document.getElementById('mobileNav');
+            const header = document.querySelector('.header');
+
+            // Event listeners - with null checks
+            if (mobileMenuToggle) {
+                mobileMenuToggle.addEventListener('click', toggleMobileMenu);
+            }
+            if (mobileSectionHeader) {
+                mobileSectionHeader.addEventListener('click', toggleCategoryList);
+            }
+
+            // Close mobile menu on window resize
+            window.addEventListener('resize', function() {
+                if (window.innerWidth > 768 && mobileNav && mobileNav.classList.contains('active')) {
+                    if (header) header.classList.remove('nav-open');
+                    mobileNav.classList.remove('active');
+                    document.body.style.overflow = '';
+                    if (mobileMenuToggle) mobileMenuToggle.innerHTML = '<i class="fas fa-bars"></i>';
+                }
+            });
+
+            // Populate mobile category list
+            function populateMobileCategories(categories) {
+                const mobileCategoryList = document.querySelector('.category-list');
+                if (!mobileCategoryList) {
+                    console.error('Mobile category list not found');
+                    return;
+                }
+
+                const categoryHTML = categories.map(category => `
+                    <li data-category="${category.id}" class="${category.active ? 'active' : ''}">
+                        <i class="fas fa-${category.icon}"></i>
+                        ${category.name}
+                    </li>
+                `).join('');
+                mobileCategoryList.innerHTML = categoryHTML;
+
+                // Add click handlers to category items
+                mobileCategoryList.querySelectorAll('li').forEach(item => {
+                    item.addEventListener('click', function() {
+                        const category = this.dataset.category;
+                        filterProducts(category);
+                        
+                        // Update active state
+                        mobileCategoryList.querySelectorAll('li').forEach(li => 
+                            li.classList.remove('active'));
+                        this.classList.add('active');
+
+                        // Close mobile menu after selection
+                        if (typeof toggleMobileMenu === 'function') {
+                            toggleMobileMenu();
+                        }
+                    });
+                });
+            }
+
+            // Sample categories - replace with your actual categories
+            const sampleCategories = [
+                { id: 'all', name: 'All Products', icon: 'th-large', active: true },
+                { id: 'electronics', name: 'Electronics', icon: 'laptop' },
+                { id: 'fashion', name: 'Fashion', icon: 'tshirt' },
+                { id: 'home', name: 'Home & Living', icon: 'home' },
+                { id: 'beauty', name: 'Beauty', icon: 'spa' },
+                { id: 'sports', name: 'Sports', icon: 'futbol' }
+            ];
+
+            // Initialize categories
+            populateMobileCategories(sampleCategories);
+        });
+    </script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Get all needed elements
+            const sidebar = document.getElementById('sidebar');
+            const mobileFilterBtn = document.getElementById('mobileFilterBtn');
+            const closeSidebarBtn = document.getElementById('closeSidebarBtn');
+            const sidebarOverlay = document.getElementById('sidebarOverlay');
+            const categorySection = document.querySelector('.category-section');
+            const mobileCollapsible = document.querySelector('.mobile-collapsible');
+
+            // Mobile sidebar functionality
+            function toggleSidebar() {
+                if (!sidebar || !sidebarOverlay) return;
+                sidebar.classList.toggle('active');
+                sidebarOverlay.classList.toggle('active');
+                document.body.style.overflow = sidebar.classList.contains('active') ? 'hidden' : '';
+            }
+
+            // Mobile category collapse functionality
+            function toggleCategoryCollapse() {
+                if (window.innerWidth <= 768 && categorySection) {
+                    categorySection.classList.toggle('collapsed');
+                }
+            }
+
+            // Add event listeners with null checks
+            if (mobileFilterBtn) {
+                mobileFilterBtn.addEventListener('click', toggleSidebar);
+            }
+            if (closeSidebarBtn) {
+                closeSidebarBtn.addEventListener('click', toggleSidebar);
+            }
+            if (sidebarOverlay) {
+                sidebarOverlay.addEventListener('click', toggleSidebar);
+            }
+            if (mobileCollapsible) {
+                mobileCollapsible.addEventListener('click', function(e) {
+                    if (window.innerWidth <= 768) {
+                        toggleCategoryCollapse();
+                    }
+                });
+            }
+
+            // Close sidebar when pressing escape key
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'Escape' && sidebar.classList.contains('active')) {
+                    toggleSidebar();
+                }
+            });
+
+            // Initialize mobile view
+            function initMobileView() {
+                if (window.innerWidth <= 768) {
+                    sidebar.classList.remove('active');
+                    sidebarOverlay.classList.remove('active');
+                    document.body.style.overflow = '';
+                    
+                    // Initialize category section as collapsed on mobile
+                    categorySection.classList.add('collapsed');
+                } else {
+                    // Remove collapsed state on desktop
+                    categorySection.classList.remove('collapsed');
+                }
+            }
+
+            // Listen for window resize
+            window.addEventListener('resize', initMobileView);
+
+            // Initialize on page load
+            initMobileView();
+        });
+    </script>
+
+    <!-- Header and Footer Scripts -->
+    <script src="../js/header.js"></script>
+    <script src="../js/footer.js"></script>
+</body>
+</html>

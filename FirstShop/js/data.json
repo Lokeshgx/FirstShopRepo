@@ -1,0 +1,844 @@
+{
+    "products": [
+        {
+            "id": 1,
+            "title": "Premium Wireless Headphones",
+            "description": "High-quality wireless headphones with active noise cancellation and 30-hour battery life",
+            "category": "electronics",
+            "type": "Audio",
+            "brand": "SoundMaster",
+            "price": 299.99,
+            "discountedPrice": 249.99,
+            "discount": 17,
+            "rating": 4.7,
+            "ratingCount": 453,
+            "features": [
+                "Active Noise Cancellation",
+                "30-hour Battery Life",
+                "Bluetooth 5.0",
+                "Touch Controls"
+            ],
+            "images": [
+                "https://picsum.photos/seed/headphones1/800/600",
+                "https://picsum.photos/seed/headphones2/800/600",
+                "https://picsum.photos/seed/headphones3/800/600",
+                "https://picsum.photos/seed/headphones4/800/600"
+            ],
+            "colors": ["Black", "White", "Rose Gold"],
+            "sizes": ["One Size"]
+        },
+        {
+            "id": 2,
+            "title": "Smart Fitness Watch",
+            "description": "Advanced fitness tracker with heart rate monitoring and GPS",
+            "category": "electronics",
+            "type": "Wearable",
+            "brand": "FitTech",
+            "price": 199.99,
+            "discountedPrice": 169.99,
+            "discount": 15,
+            "rating": 4.6,
+            "ratingCount": 328,
+            "features": [
+                "Heart Rate Monitor",
+                "GPS Tracking",
+                "Sleep Analysis",
+                "Water Resistant"
+            ],
+            "images": [
+                "https://picsum.photos/seed/watch1/800/600",
+                "https://picsum.photos/seed/watch2/800/600",
+                "https://picsum.photos/seed/watch3/800/600"
+            ],
+            "colors": ["Black", "Silver", "Rose Gold"],
+            "sizes": ["One Size"]
+        },
+        {
+            "id": 3,
+            "title": "Premium Cotton T-Shirt",
+            "description": "Ultra-soft 100% organic cotton t-shirt with modern fit",
+            "category": "clothing",
+            "dressType": "Casual Wear",
+            "fabric": "100% Organic Cotton",
+            "fitting": "Modern Fit",
+            "brand": "EcoStyle",
+            "sizes": ["XS", "S", "M", "L", "XL", "XXL"],
+            "colors": ["White", "Black", "Navy", "Grey", "Red"],
+            "gender": "Unisex",
+            "price": 39.99,
+            "discountedPrice": 29.99,
+            "discount": 25,
+            "rating": 4.5,
+            "ratingCount": 567,
+            "images": [
+                "https://picsum.photos/seed/tshirt1/800/600",
+                "https://picsum.photos/seed/tshirt2/800/600",
+                "https://picsum.photos/seed/tshirt3/800/600"
+            ]
+        },
+        {
+            "id": 4,
+            "title": "Designer Denim Jeans",
+            "description": "Classic fit denim jeans with premium wash",
+            "category": "clothing",
+            "dressType": "Casual Wear",
+            "fabric": "Premium Denim",
+            "fitting": "Classic Fit",
+            "brand": "DenimLuxe",
+            "sizes": ["28", "30", "32", "34", "36", "38"],
+            "colors": ["Dark Blue", "Light Blue", "Black"],
+            "gender": "Unisex",
+            "price": 89.99,
+            "discountedPrice": 69.99,
+            "discount": 22,
+            "rating": 4.6,
+            "ratingCount": 423,
+            "images": [
+                "https://picsum.photos/seed/jeans1/800/600",
+                "https://picsum.photos/seed/jeans2/800/600",
+                "https://picsum.photos/seed/jeans3/800/600"
+            ]
+        },
+        {
+            "id": 5,
+            "title": "Bestseller Novel Collection",
+            "description": "Set of 3 bestselling mystery novels",
+            "category": "books",
+            "type": "Book Set",
+            "brand": "Literary Classics",
+            "price": 49.99,
+            "discountedPrice": 39.99,
+            "discount": 20,
+            "rating": 4.8,
+            "ratingCount": 189,
+            "features": [
+                "Hardcover Edition",
+                "Bestseller Collection",
+                "Gift Box Set"
+            ],
+            "images": [
+                "https://picsum.photos/seed/books1/800/600",
+                "https://picsum.photos/seed/books2/800/600",
+                "https://picsum.photos/seed/books3/800/600"
+            ]
+        },
+        {
+            "id": 6,
+            "title": "Smart LED TV",
+            "description": "55-inch 4K Smart LED TV with HDR",
+            "category": "electronics",
+            "type": "Television",
+            "brand": "TechView",
+            "price": 699.99,
+            "discountedPrice": 599.99,
+            "discount": 14,
+            "rating": 4.7,
+            "ratingCount": 652,
+            "features": [
+                "4K Resolution",
+                "HDR Support",
+                "Smart TV Features",
+                "Voice Control"
+            ],
+            "images": [
+                "https://picsum.photos/seed/tv1/800/600",
+                "https://picsum.photos/seed/tv2/800/600",
+                "https://picsum.photos/seed/tv3/800/600"
+            ]
+        },
+        {
+            "id": 7,
+            "title": "Ergonomic Office Chair",
+            "description": "Comfortable office chair with lumbar support",
+            "category": "home",
+            "type": "Furniture",
+            "brand": "ComfortPro",
+            "price": 249.99,
+            "discountedPrice": 199.99,
+            "discount": 20,
+            "rating": 4.5,
+            "ratingCount": 287,
+            "features": [
+                "Lumbar Support",
+                "Adjustable Height",
+                "360° Swivel",
+                "Breathable Mesh"
+            ],
+            "images": [
+                "https://picsum.photos/seed/chair1/800/600",
+                "https://picsum.photos/seed/chair2/800/600",
+                "https://picsum.photos/seed/chair3/800/600"
+            ],
+            "colors": ["Black", "Grey", "Blue"]
+        },
+        {
+            "id": 8,
+            "title": "Coffee Maker Deluxe",
+            "description": "Programmable coffee maker with built-in grinder",
+            "category": "home",
+            "type": "Appliance",
+            "brand": "BrewMaster",
+            "price": 159.99,
+            "discountedPrice": 129.99,
+            "discount": 19,
+            "rating": 4.6,
+            "ratingCount": 432,
+            "features": [
+                "Built-in Grinder",
+                "Programmable Timer",
+                "12-Cup Capacity",
+                "Keep Warm Function"
+            ],
+            "images": [
+                "https://picsum.photos/seed/coffee1/800/600",
+                "https://picsum.photos/seed/coffee2/800/600",
+                "https://picsum.photos/seed/coffee3/800/600"
+            ]
+        },
+        {
+            "id": 9,
+            "title": "Yoga Mat Premium",
+            "description": "Extra thick eco-friendly yoga mat with carrying strap",
+            "category": "fitness",
+            "type": "Exercise Equipment",
+            "brand": "YogaFlex",
+            "price": 45.99,
+            "discountedPrice": 35.99,
+            "discount": 22,
+            "rating": 4.7,
+            "ratingCount": 765,
+            "features": [
+                "Extra Thick",
+                "Non-Slip Surface",
+                "Eco-Friendly",
+                "Carrying Strap"
+            ],
+            "images": [
+                "https://picsum.photos/seed/yoga1/800/600",
+                "https://picsum.photos/seed/yoga2/800/600",
+                "https://picsum.photos/seed/yoga3/800/600"
+            ],
+            "colors": ["Purple", "Blue", "Green", "Black"]
+        },
+        {
+            "id": 10,
+            "title": "Digital Camera Kit",
+            "description": "Professional DSLR camera with two lenses",
+            "category": "electronics",
+            "type": "Camera",
+            "brand": "PhotoPro",
+            "price": 999.99,
+            "discountedPrice": 899.99,
+            "discount": 10,
+            "rating": 4.8,
+            "ratingCount": 324,
+            "features": [
+                "24.2MP Sensor",
+                "4K Video",
+                "Dual Lens Kit",
+                "Wi-Fi Connectivity"
+            ],
+            "images": [
+                "https://picsum.photos/seed/camera1/800/600",
+                "https://picsum.photos/seed/camera2/800/600",
+                "https://picsum.photos/seed/camera3/800/600"
+            ]
+        },
+        {
+            "id": 11,
+            "title": "Running Shoes",
+            "description": "Lightweight running shoes with superior cushioning",
+            "category": "fitness",
+            "type": "Footwear",
+            "brand": "SpeedRunner",
+            "sizes": ["7", "8", "9", "10", "11", "12"],
+            "colors": ["Black/Red", "Blue/White", "Grey/Orange"],
+            "gender": "Unisex",
+            "price": 129.99,
+            "discountedPrice": 99.99,
+            "discount": 23,
+            "rating": 4.6,
+            "ratingCount": 892,
+            "features": [
+                "Lightweight Design",
+                "Superior Cushioning",
+                "Breathable Mesh",
+                "Anti-slip Sole"
+            ],
+            "images": [
+                "https://picsum.photos/seed/shoes1/800/600",
+                "https://picsum.photos/seed/shoes2/800/600",
+                "https://picsum.photos/seed/shoes3/800/600"
+            ]
+        },
+        {
+            "id": 12,
+            "title": "Cooking Set",
+            "description": "10-piece non-stick cooking set",
+            "category": "home",
+            "type": "Kitchenware",
+            "brand": "ChefElite",
+            "price": 199.99,
+            "discountedPrice": 149.99,
+            "discount": 25,
+            "rating": 4.7,
+            "ratingCount": 567,
+            "features": [
+                "Non-stick Surface",
+                "10-Piece Set",
+                "Dishwasher Safe",
+                "Heat Resistant Handles"
+            ],
+            "images": [
+                "https://picsum.photos/seed/cooking1/800/600",
+                "https://picsum.photos/seed/cooking2/800/600",
+                "https://picsum.photos/seed/cooking3/800/600"
+            ]
+        },
+        {
+            "id": 13,
+            "title": "Bluetooth Speaker",
+            "description": "Waterproof portable bluetooth speaker",
+            "category": "electronics",
+            "type": "Audio",
+            "brand": "SoundWave",
+            "price": 79.99,
+            "discountedPrice": 59.99,
+            "discount": 25,
+            "rating": 4.5,
+            "ratingCount": 743,
+            "features": [
+                "Waterproof",
+                "20-Hour Battery",
+                "Bluetooth 5.0",
+                "Built-in Microphone"
+            ],
+            "images": [
+                "https://picsum.photos/seed/speaker1/800/600",
+                "https://picsum.photos/seed/speaker2/800/600",
+                "https://picsum.photos/seed/speaker3/800/600"
+            ],
+            "colors": ["Black", "Blue", "Red"]
+        },
+        {
+            "id": 14,
+            "title": "Winter Jacket",
+            "description": "Warm winter jacket with water-resistant coating",
+            "category": "clothing",
+            "dressType": "Outerwear",
+            "fabric": "Polyester with Water-resistant Coating",
+            "fitting": "Regular",
+            "brand": "WinterGuard",
+            "sizes": ["XS", "S", "M", "L", "XL"],
+            "colors": ["Black", "Navy", "Olive"],
+            "gender": "Unisex",
+            "price": 159.99,
+            "discountedPrice": 129.99,
+            "discount": 19,
+            "rating": 4.6,
+            "ratingCount": 342,
+            "images": [
+                "https://picsum.photos/seed/jacket1/800/600",
+                "https://picsum.photos/seed/jacket2/800/600",
+                "https://picsum.photos/seed/jacket3/800/600"
+            ]
+        },
+        {
+            "id": 15,
+            "title": "Smart Home Hub",
+            "description": "Central hub for smart home automation",
+            "category": "electronics",
+            "type": "Smart Home",
+            "brand": "SmartLife",
+            "price": 149.99,
+            "discountedPrice": 119.99,
+            "discount": 20,
+            "rating": 4.7,
+            "ratingCount": 523,
+            "features": [
+                "Voice Control",
+                "Multi-device Support",
+                "Wi-Fi 6",
+                "Smart Assistant"
+            ],
+            "images": [
+                "https://picsum.photos/seed/smarthome1/800/600",
+                "https://picsum.photos/seed/smarthome2/800/600",
+                "https://picsum.photos/seed/smarthome3/800/600"
+            ],
+            "colors": ["White", "Black"]
+        }
+,
+        {
+            "id": 16,
+            "title": "Designer Evening Gown",
+            "description": "Elegant floor-length evening gown with delicate beading and a flowing silhouette",
+            "category": "clothing",
+            "dressType": "Evening Wear",
+            "fabric": "Silk Chiffon",
+            "fitting": "A-line",
+            "brand": "Elegance",
+            "sizes": ["XS", "S", "M", "L", "XL"],
+            "colors": ["Navy Blue", "Burgundy", "Black", "Emerald"],
+            "gender": "Women",
+            "price": 599.99,
+            "discountedPrice": 479.99,
+            "discount": 20,
+            "rating": 4.8,
+            "ratingCount": 156,
+            "images": [
+                "https://picsum.photos/seed/gown1/800/600",
+                "https://picsum.photos/seed/gown2/800/600",
+                "https://picsum.photos/seed/gown3/800/600",
+                "https://picsum.photos/seed/gown4/800/600"
+            ]
+        },
+        {
+            "id": 17,
+            "title": "Smart 4K OLED TV",
+            "description": "65-inch OLED TV with AI-powered picture processing and Dolby Atmos sound",
+            "category": "electronics",
+            "type": "Television",
+            "brand": "TechVision",
+            "price": 2499.99,
+            "discountedPrice": 1999.99,
+            "discount": 20,
+            "rating": 4.9,
+            "ratingCount": 328,
+            "features": [
+                "4K OLED Display",
+                "AI Picture Processing",
+                "Dolby Atmos",
+                "Smart Platform"
+            ],
+            "images": [
+                "https://picsum.photos/seed/tv1/800/600",
+                "https://picsum.photos/seed/tv2/800/600",
+                "https://picsum.photos/seed/tv3/800/600"
+            ]
+        },
+        {
+            "id": 18,
+            "title": "Business Suit Set",
+            "description": "Premium wool-blend business suit with modern tailored fit",
+            "category": "clothing",
+            "dressType": "Formal Wear",
+            "fabric": "Wool Blend",
+            "fitting": "Tailored",
+            "brand": "Executive Style",
+            "sizes": ["38R", "40R", "42R", "44R", "46R"],
+            "colors": ["Charcoal Grey", "Navy Blue", "Black"],
+            "gender": "Men",
+            "price": 799.99,
+            "discountedPrice": 639.99,
+            "discount": 20,
+            "rating": 4.7,
+            "ratingCount": 203,
+            "images": [
+                "https://picsum.photos/seed/suit1/800/600",
+                "https://picsum.photos/seed/suit2/800/600",
+                "https://picsum.photos/seed/suit3/800/600"
+            ]
+        },
+        {
+            "id": 19,
+            "title": "Gaming Laptop",
+            "description": "High-performance gaming laptop with RGB keyboard and ray-tracing graphics",
+            "category": "electronics",
+            "type": "Laptop",
+            "brand": "TechPro",
+            "price": 1999.99,
+            "discountedPrice": 1799.99,
+            "discount": 10,
+            "rating": 4.8,
+            "ratingCount": 452,
+            "features": [
+                "RTX 4080 Graphics",
+                "32GB RAM",
+                "1TB NVMe SSD",
+                "165Hz Display"
+            ],
+            "images": [
+                "https://picsum.photos/seed/laptop1/800/600",
+                "https://picsum.photos/seed/laptop2/800/600",
+                "https://picsum.photos/seed/laptop3/800/600"
+            ]
+        },
+        {
+            "id": 20,
+            "title": "Summer Maxi Dress",
+            "description": "Floral print maxi dress with adjustable straps and side slits",
+            "category": "clothing",
+            "dressType": "Casual Wear",
+            "fabric": "Cotton Blend",
+            "fitting": "Regular",
+            "brand": "Summer Breeze",
+            "sizes": ["XS", "S", "M", "L", "XL"],
+            "colors": ["Floral Blue", "Floral Pink", "Floral Yellow"],
+            "gender": "Women",
+            "price": 89.99,
+            "discountedPrice": 69.99,
+            "discount": 22,
+            "rating": 4.6,
+            "ratingCount": 328,
+            "images": [
+                "https://picsum.photos/seed/dress1/800/600",
+                "https://picsum.photos/seed/dress2/800/600",
+                "https://picsum.photos/seed/dress3/800/600"
+            ]
+        },
+        {
+            "id": 21,
+            "title": "Smart Home Security System",
+            "description": "Complete home security system with cameras, sensors, and mobile app control",
+            "category": "electronics",
+            "type": "Security System",
+            "brand": "SecureHome",
+            "price": 599.99,
+            "discountedPrice": 499.99,
+            "discount": 17,
+            "rating": 4.7,
+            "ratingCount": 186,
+            "features": [
+                "4K Cameras",
+                "Motion Sensors",
+                "Mobile App",
+                "24/7 Monitoring"
+            ],
+            "images": [
+                "https://picsum.photos/seed/security1/800/600",
+                "https://picsum.photos/seed/security2/800/600",
+                "https://picsum.photos/seed/security3/800/600"
+            ]
+        },
+        {
+            "id": 22,
+            "title": "Athletic Performance Set",
+            "description": "Moisture-wicking athletic wear set with compression technology",
+            "category": "clothing",
+            "dressType": "Sportswear",
+            "fabric": "Performance Polyester",
+            "fitting": "Athletic",
+            "brand": "SportsFit",
+            "sizes": ["XS", "S", "M", "L", "XL"],
+            "colors": ["Black/Red", "Navy/White", "Grey/Blue"],
+            "gender": "Unisex",
+            "price": 129.99,
+            "discountedPrice": 99.99,
+            "discount": 23,
+            "rating": 4.5,
+            "ratingCount": 274,
+            "images": [
+                "https://picsum.photos/seed/sport1/800/600",
+                "https://picsum.photos/seed/sport2/800/600",
+                "https://picsum.photos/seed/sport3/800/600"
+            ]
+        },
+        {
+            "id": 23,
+            "title": "Wireless Earbuds Pro",
+            "description": "Premium wireless earbuds with active noise cancellation and spatial audio",
+            "category": "electronics",
+            "type": "Audio",
+            "brand": "SoundTech",
+            "price": 249.99,
+            "discountedPrice": 199.99,
+            "discount": 20,
+            "rating": 4.8,
+            "ratingCount": 892,
+            "features": [
+                "Active Noise Cancellation",
+                "Spatial Audio",
+                "30-Hour Battery",
+                "Water Resistant"
+            ],
+            "images": [
+                "https://picsum.photos/seed/earbuds1/800/600",
+                "https://picsum.photos/seed/earbuds2/800/600",
+                "https://picsum.photos/seed/earbuds3/800/600"
+            ]
+        },
+        {
+            "id": 24,
+            "title": "Winter Collection Coat",
+            "description": "Premium wool-blend winter coat with faux fur collar",
+            "category": "clothing",
+            "dressType": "Outerwear",
+            "fabric": "Wool Blend",
+            "fitting": "Regular",
+            "brand": "WinterStyle",
+            "sizes": ["XS", "S", "M", "L", "XL"],
+            "colors": ["Camel", "Black", "Grey"],
+            "gender": "Women",
+            "price": 299.99,
+            "discountedPrice": 239.99,
+            "discount": 20,
+            "rating": 4.7,
+            "ratingCount": 163,
+            "images": [
+                "https://picsum.photos/seed/coat1/800/600",
+                "https://picsum.photos/seed/coat2/800/600",
+                "https://picsum.photos/seed/coat3/800/600"
+            ]
+        },
+        {
+            "id": 25,
+            "title": "Smart Refrigerator",
+            "description": "Smart french door refrigerator with touchscreen and Wi-Fi connectivity",
+            "category": "electronics",
+            "type": "Appliance",
+            "brand": "SmartHome",
+            "price": 2999.99,
+            "discountedPrice": 2599.99,
+            "discount": 13,
+            "rating": 4.6,
+            "ratingCount": 127,
+            "features": [
+                "Touch Screen",
+                "Wi-Fi Connected",
+                "Camera Inside",
+                "Energy Efficient"
+            ],
+            "images": [
+                "https://picsum.photos/seed/fridge1/800/600",
+                "https://picsum.photos/seed/fridge2/800/600",
+                "https://picsum.photos/seed/fridge3/800/600"
+            ]
+        },
+        {
+            "id": 26,
+            "title": "Formal Blazer",
+            "description": "Classic tailored blazer with premium Italian fabric",
+            "category": "clothing",
+            "dressType": "Formal Wear",
+            "fabric": "Italian Wool",
+            "fitting": "Slim",
+            "brand": "Milano Style",
+            "sizes": ["36R", "38R", "40R", "42R", "44R"],
+            "colors": ["Navy", "Black", "Grey"],
+            "gender": "Men",
+            "price": 399.99,
+            "discountedPrice": 319.99,
+            "discount": 20,
+            "rating": 4.7,
+            "ratingCount": 218,
+            "images": [
+                "https://picsum.photos/seed/blazer1/800/600",
+                "https://picsum.photos/seed/blazer2/800/600",
+                "https://picsum.photos/seed/blazer3/800/600"
+            ]
+        },
+        {
+            "id": 27,
+            "title": "4K Action Camera",
+            "description": "Waterproof 4K action camera with image stabilization",
+            "category": "electronics",
+            "type": "Camera",
+            "brand": "ActionPro",
+            "price": 399.99,
+            "discountedPrice": 329.99,
+            "discount": 18,
+            "rating": 4.8,
+            "ratingCount": 573,
+            "features": [
+                "4K/60fps Video",
+                "Waterproof",
+                "Image Stabilization",
+                "Voice Control"
+            ],
+            "images": [
+                "https://picsum.photos/seed/action1/800/600",
+                "https://picsum.photos/seed/action2/800/600",
+                "https://picsum.photos/seed/action3/800/600"
+            ]
+        },
+        {
+            "id": 28,
+            "title": "Denim Collection Set",
+            "description": "Premium denim jacket and jeans set with distressed details",
+            "category": "clothing",
+            "dressType": "Casual Wear",
+            "fabric": "Premium Denim",
+            "fitting": "Regular",
+            "brand": "DenimCo",
+            "sizes": ["XS", "S", "M", "L", "XL"],
+            "colors": ["Light Wash", "Medium Wash", "Dark Wash"],
+            "gender": "Unisex",
+            "price": 199.99,
+            "discountedPrice": 159.99,
+            "discount": 20,
+            "rating": 4.6,
+            "ratingCount": 342,
+            "images": [
+                "https://picsum.photos/seed/denim1/800/600",
+                "https://picsum.photos/seed/denim2/800/600",
+                "https://picsum.photos/seed/denim3/800/600"
+            ]
+        },
+        {
+            "id": 29,
+            "title": "Smart Robot Vacuum",
+            "description": "AI-powered robot vacuum with mapping and self-emptying base",
+            "category": "electronics",
+            "type": "Home Appliance",
+            "brand": "CleanTech",
+            "price": 799.99,
+            "discountedPrice": 649.99,
+            "discount": 19,
+            "rating": 4.7,
+            "ratingCount": 438,
+            "features": [
+                "AI Navigation",
+                "Self-Emptying",
+                "App Control",
+                "HEPA Filter"
+            ],
+            "images": [
+                "https://picsum.photos/seed/vacuum1/800/600",
+                "https://picsum.photos/seed/vacuum2/800/600",
+                "https://picsum.photos/seed/vacuum3/800/600"
+            ]
+        },
+        {
+            "id": 30,
+            "title": "Silk Wedding Dress",
+            "description": "Luxurious silk wedding dress with hand-beaded details",
+            "category": "clothing",
+            "dressType": "Bridal Wear",
+            "fabric": "Pure Silk",
+            "fitting": "Mermaid",
+            "brand": "Bridal Dreams",
+            "sizes": ["2", "4", "6", "8", "10", "12", "14"],
+            "colors": ["White", "Ivory", "Champagne"],
+            "gender": "Women",
+            "price": 2499.99,
+            "discountedPrice": 1999.99,
+            "discount": 20,
+            "rating": 4.9,
+            "ratingCount": 87,
+            "images": [
+                "https://picsum.photos/seed/wedding1/800/600",
+                "https://picsum.photos/seed/wedding2/800/600",
+                "https://picsum.photos/seed/wedding3/800/600",
+                "https://picsum.photos/seed/wedding4/800/600"
+            ]
+        },
+        {
+            "id": 31,
+            "title": "Professional DJ Controller",
+            "description": "Professional-grade DJ controller with touch-sensitive jog wheels",
+            "category": "electronics",
+            "type": "Audio Equipment",
+            "brand": "SoundMaster",
+            "price": 1299.99,
+            "discountedPrice": 1099.99,
+            "discount": 15,
+            "rating": 4.8,
+            "ratingCount": 246,
+            "features": [
+                "Touch Jog Wheels",
+                "4-Channel Mixer",
+                "Built-in Effects",
+                "Pro Software"
+            ],
+            "images": [
+                "https://picsum.photos/seed/dj1/800/600",
+                "https://picsum.photos/seed/dj2/800/600",
+                "https://picsum.photos/seed/dj3/800/600"
+            ]
+        },
+        {
+            "id": 32,
+            "title": "Designer Handbag",
+            "description": "Luxury leather designer handbag with gold hardware",
+            "category": "clothing",
+            "dressType": "Accessories",
+            "fabric": "Genuine Leather",
+            "brand": "LuxStyle",
+            "sizes": ["One Size"],
+            "colors": ["Black", "Brown", "Red"],
+            "gender": "Women",
+            "price": 1299.99,
+            "discountedPrice": 999.99,
+            "discount": 23,
+            "rating": 4.8,
+            "ratingCount": 167,
+            "images": [
+                "https://picsum.photos/seed/bag1/800/600",
+                "https://picsum.photos/seed/bag2/800/600",
+                "https://picsum.photos/seed/bag3/800/600"
+            ]
+        },
+        {
+            "id": 33,
+            "title": "Smart Watch Pro",
+            "description": "Advanced smartwatch with health monitoring and cellular connectivity",
+            "category": "electronics",
+            "type": "Wearable",
+            "brand": "TechWear",
+            "price": 499.99,
+            "discountedPrice": 429.99,
+            "discount": 14,
+            "rating": 4.7,
+            "ratingCount": 892,
+            "features": [
+                "Health Monitoring",
+                "Cellular",
+                "GPS",
+                "Water Resistant"
+            ],
+            "images": [
+                "https://picsum.photos/seed/smartwatch1/800/600",
+                "https://picsum.photos/seed/smartwatch2/800/600",
+                "https://picsum.photos/seed/smartwatch3/800/600"
+            ]
+        },
+        {
+            "id": 34,
+            "title": "Cashmere Sweater Set",
+            "description": "Luxury cashmere sweater and scarf set",
+            "category": "clothing",
+            "dressType": "Knitwear",
+            "fabric": "Pure Cashmere",
+            "fitting": "Regular",
+            "brand": "CashmereLux",
+            "sizes": ["XS", "S", "M", "L", "XL"],
+            "colors": ["Cream", "Grey", "Navy"],
+            "gender": "Unisex",
+            "price": 599.99,
+            "discountedPrice": 479.99,
+            "discount": 20,
+            "rating": 4.8,
+            "ratingCount": 143,
+            "images": [
+                "https://picsum.photos/seed/cashmere1/800/600",
+                "https://picsum.photos/seed/cashmere2/800/600",
+                "https://picsum.photos/seed/cashmere3/800/600"
+            ]
+        },
+        {
+            "id": 35,
+            "title": "Gaming Console Pro",
+            "description": "Next-gen gaming console with 4K gaming and ray tracing",
+            "category": "electronics",
+            "type": "Gaming",
+            "brand": "GameTech",
+            "price": 599.99,
+            "discountedPrice": 549.99,
+            "discount": 8,
+            "rating": 4.9,
+            "ratingCount": 1247,
+            "features": [
+                "4K Gaming",
+                "Ray Tracing",
+                "1TB SSD",
+                "Digital Edition"
+            ],
+            "images": [
+                "https://picsum.photos/seed/console1/800/600",
+                "https://picsum.photos/seed/console2/800/600",
+                "https://picsum.photos/seed/console3/800/600"
+            ]
+        }
+    ]
+}

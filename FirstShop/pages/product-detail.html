@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Detail - B2B Sale</title>
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/header-footer.css">
+    <link rel="stylesheet" href="../css/product-detail.css">
+    <link rel="stylesheet" href="../css/mobile.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header"></header>
+
+    <main class="product-detail-page">
+        <div class="container">
+            <!-- Product Images Section -->
+            <div class="product-images">
+                <div class="main-image">
+                    <img id="mainImage" src="" alt="Product">
+                </div>
+                <div class="thumbnail-images" id="thumbnailContainer">
+                    <!-- Thumbnails will be populated dynamically -->
+                </div>
+            </div>
+
+            <!-- Product Info Section -->
+            <div class="product-info">
+                <h1 class="product-title" id="productTitle"></h1>
+                
+                <div class="product-rating">
+                    <div class="stars" id="ratingStars"></div>
+                    <span class="rating-count" id="ratingCount"></span>
+                    <span class="purchase-count" id="purchaseCount"></span>
+                </div>
+
+                <div class="price-section">
+                    <div class="price-info">
+                        <span class="discounted-price" id="discountedPrice"></span>
+                        <span class="original-price" id="originalPrice"></span>
+                        <span class="discount-badge" id="discountBadge"></span>
+                    </div>
+                    <span class="stock-status" id="stockStatus">In Stock</span>
+                </div>
+
+                <!-- Color Selection -->
+                <div class="color-selection">
+                    <h3>Available Colors</h3>
+                    <div class="color-options" id="colorOptions">
+                        <!-- Colors will be populated dynamically -->
+                    </div>
+                </div>
+
+                <!-- Size Selection -->
+                <div class="size-selection">
+                    <h3>Select Size</h3>
+                    <div class="size-options" id="sizeOptions">
+                        <!-- Sizes will be populated dynamically -->
+                    </div>
+                </div>
+
+                <!-- Quantity Selection -->
+                <div class="quantity-selection">
+                    <h3>Quantity</h3>
+                    <div class="quantity-controls">
+                        <button class="qty-btn" onclick="updateQuantity(-1)">-</button>
+                        <input type="number" id="quantity" value="1" min="1" max="99">
+                        <button class="qty-btn" onclick="updateQuantity(1)">+</button>
+                    </div>
+                </div>
+
+                <!-- Action Buttons -->
+                <div class="product-actions">
+                    <button class="add-to-cart-btn" onclick="addToCart()">
+                        <i class="fas fa-shopping-cart"></i>
+                        Add to Cart
+                    </button>
+                    <button class="buy-now-btn" onclick="buyNow()">
+                        <i class="fas fa-bolt"></i>
+                        Buy Now
+                    </button>
+                </div>
+
+                <!-- Product Description -->
+                <div class="product-description">
+                    <div class="description-header">
+                        <h2>Description</h2>
+                    </div>
+                    <div class="description-content">
+                        <!-- Description will be populated dynamically -->
+                    </div>
+                </div>
+
+                <!-- Product Details -->
+                <div class="product-details">
+                    <div class="details-header">
+                        <h2>Product Details</h2>
+                    </div>
+                    <div class="details-content" id="productDetails">
+                        <!-- Details will be populated dynamically -->
+                    </div>
+                </div>
+
+                <!-- Product Features -->
+                <div class="product-features" id="featuresSection">
+                    <div class="features-header">
+                        <h2>Key Features</h2>
+                    </div>
+                    <ul class="features-list" id="featuresList">
+                        <!-- Features will be populated dynamically -->
+                    </ul>
+                    <ul class="features-list" id="featuresList">
+                        <!-- Features will be populated dynamically -->
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Reviews Section -->
+        <div class="reviews-section">
+            <div class="container">
+                <div class="reviews-header">
+                    <h2>Customer Reviews</h2>
+                    <button class="write-review-btn">
+                        <i class="fas fa-pen"></i>
+                        Write a Review
+                    </button>
+                </div>
+
+                <div class="rating-summary">
+                    <div class="average-rating">
+                        <h3>Average Rating</h3>
+                        <div class="rating-big" id="averageRating">
+                            <span class="rating-number">4.5</span>
+                            <div class="stars"></div>
+                            <span class="total-ratings">Based on 128 reviews</span>
+                        </div>
+                    </div>
+                    <div class="rating-bars">
+                        <!-- Rating distribution bars will be populated dynamically -->
+                    </div>
+                </div>
+
+                <div class="reviews-list" id="reviewsList">
+                    <!-- Reviews will be populated dynamically -->
+                </div>
+
+                <button class="load-more-btn" id="loadMoreReviews">
+                    Load More Reviews
+                </button>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer will be loaded dynamically -->
+    <footer class="footer"></footer>
+
+    <!-- Core scripts -->
+    <script src="../js/header.js"></script>
+    <script src="../js/cartUtils.js"></script>
+    <script src="../js/cartInit.js"></script>
+    <script src="../js/product-detail.js"></script>
+    <script src="../js/footer.js"></script>
+</body>
+</html>

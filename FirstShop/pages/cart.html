@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping Cart</title>
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/header-footer.css">
+    <link rel="stylesheet" href="../css/cart.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header"></header>
+
+    <div class="cart-container">
+        <h1>Shopping Cart</h1>
+        <div class="cart-content">
+            <div class="cart-items" id="cartItems">
+                <!-- Cart items will be dynamically added here -->
+            </div>
+            <div class="cart-summary">
+                <h2>Order Summary</h2>
+                <div class="summary-item">
+                    <span>Subtotal</span>
+                    <span id="subtotal">$0.00</span>
+                </div>
+                <div class="summary-item">
+                    <span>Shipping</span>
+                    <span id="shipping">$0.00</span>
+                </div>
+                <div class="summary-item total">
+                    <span>Total</span>
+                    <span id="total">$0.00</span>
+                </div>
+                <button type="button" class="checkout-btn" id="checkoutBtn">
+                    <i class="fas fa-shopping-cart"></i>
+                    Proceed to Checkout
+                </button>
+                <a href="product.html" class="continue-shopping">
+                    <i class="fas fa-arrow-left"></i>
+                    Continue Shopping
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <!-- Footer content will be loaded dynamically -->
+    </footer>
+
+    <script>
+        // Initialize everything when document is ready
+        document.addEventListener('DOMContentLoaded', async () => {
+            if (!window.shopCart) {
+                console.error('Cart not initialized');
+                return;
+            }
+
+            // Load cart from localStorage
+            window.shopCart.loadFromLocalStorage();
+
+            // Render the cart items
+            const cartItems = window.shopCart.getCart();
+            const cartItemsContainer = document.getElementById('cartItems');
+            
+            if (cartItemsContainer) {
+                if (cartItems && cartItems.length > 0) {
+                    // Update cart display
+                    renderCart();
+                } else {
+                    // Show empty cart message
+                    cartItemsContainer.innerHTML = `
+                        <div class="empty-cart">
+                            <i class="fas fa-shopping-cart"></i>
+                            <p>Your cart is empty</p>
+                            <a href="product.html" class="continue-shopping">Continue Shopping</a>
+                        </div>
+                    `;
+                }
+            }
+        });
+    </script>
+
+
+    <!-- Core scripts -->
+    <script src="../js/header.js"></script>
+    <script src="../js/cartUtils.js"></script>
+    <script src="../js/cart.js"></script>
+    <script src="../js/cartInit.js"></script>
+    <script src="../js/footer.js"></script>
+</body>
+</html>

@@ -1,0 +1,236 @@
+/* Cart Page Styles */
+.cart-container {
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+.cart-container h1 {
+    margin-bottom: 30px;
+    color: #333;
+}
+
+.cart-content {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 30px;
+}
+
+.cart-items {
+    background: white;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.cart-item {
+    display: grid;
+    grid-template-columns: auto 3fr 1fr;
+    gap: 20px;
+    padding: 20px;
+    border-bottom: 1px solid #eee;
+}
+
+.cart-item:last-child {
+    border-bottom: none;
+}
+
+.cart-item-image {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 4px;
+}
+
+.cart-item-details h3 {
+    margin-bottom: 8px;
+    color: #333;
+}
+
+.cart-item-price {
+    color: #666;
+    margin-bottom: 12px;
+}
+
+.quantity-controls {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.quantity-btn {
+    background: #f0f0f0;
+    border: none;
+    width: 30px;
+    height: 30px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.quantity-btn:hover {
+    background: #e0e0e0;
+}
+
+.quantity-display {
+    font-weight: 500;
+}
+
+.remove-item {
+    color: #e44d26;
+    background: none;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    padding: 5px;
+    margin-top: 10px;
+    font-size: 0.9em;
+}
+
+.remove-item:hover {
+    text-decoration: underline;
+}
+
+.cart-summary {
+    background: white;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    height: fit-content;
+}
+
+.cart-summary h2 {
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.summary-item {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 15px;
+    color: #666;
+}
+
+.summary-item.total {
+    font-weight: bold;
+    color: #333;
+    font-size: 1.2em;
+    border-top: 1px solid #eee;
+    margin-top: 15px;
+    padding-top: 15px;
+}
+
+
+.checkout-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    width: 100%;
+    padding: 15px;
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 1rem;
+    font-weight: 600;
+    text-decoration: none;
+    margin-bottom: 1rem;
+    transition: background-color 0.3s ease;
+}
+
+
+.checkout-btn:hover {
+    background: green;
+}
+
+
+.continue-shopping {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: #1a73e8;
+    text-decoration: none;
+    margin-top: 20px;
+    font-weight: 500;
+}
+
+.continue-shopping:hover {
+    text-decoration: underline;
+}
+
+.empty-cart {
+    text-align: center;
+    padding: 40px;
+    color: #666;
+}
+
+.empty-cart i {
+    font-size: 3em;
+    color: #ccc;
+    margin-bottom: 20px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .cart-content {
+        grid-template-columns: 1fr;
+    }
+
+    .cart-item {
+        grid-template-columns: auto 1fr;
+    }
+
+    .cart-item-image {
+        width: 80px;
+        height: 80px;
+    }
+}
+
+/* Loading Animation */
+.loading {
+    text-align: center;
+    padding: 40px;
+}
+
+.loading::after {
+    content: "";
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    border: 3px solid #f3f3f3;
+    border-top: 3px solid #1a73e8;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Checkout Button Styles */
+
+
+.continue-shopping {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    width: 100%;
+    padding: 14px;
+    background-color: white;
+    color: var(--primary-color);
+    border: 1px solid var(--primary-color);
+    border-radius: 4px;
+    font-size: 1rem;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.continue-shopping:hover {
+    background-color: var(--primary-color);
+    color: white;
+}
