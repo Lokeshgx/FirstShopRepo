@@ -129,8 +129,8 @@ function createProductCard(product) {
                 </a>
                 <p class="product-description">${product.description}</p>
                 <div class="product-price">
-                    <span class="original-price">$${product.price}</span>
-                    <span class="discounted-price">$${product.discountedPrice}</span>
+                    <span class="original-price">${product.price}</span>
+                    <span class="discounted-price">${product.discountedPrice}</span>
                     <span class="discount-badge">-${discount}%</span>
                 </div>
                 <div class="product-actions">
