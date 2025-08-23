@@ -1,7 +1,7 @@
 // Function to load the footer
 async function loadFooter() {
     try {
-        const response = await fetch('/pages/footer.html');
+        const response = await fetch('../pages/footer.html');
         if (!response.ok) {
             throw new Error(`HTTP error! status: ${response.status}`);
         }
@@ -19,3 +19,4 @@ async function loadFooter() {
 
 // Load footer when DOM is ready
 document.addEventListener('DOMContentLoaded', loadFooter);
+
