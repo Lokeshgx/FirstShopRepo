@@ -84,9 +84,9 @@ function updateSummary() {
     const shippingElement = document.getElementById('shipping');
     const totalElement = document.getElementById('total');
     
-    if (subtotalElement) subtotalElement.textContent = `$${formatPrice(subtotal)}`;
-    if (shippingElement) shippingElement.textContent = `$${formatPrice(shipping)}`;
-    if (totalElement) totalElement.textContent = `$${formatPrice(total)}`;
+    if (subtotalElement) subtotalElement.textContent = `${formatPrice(subtotal)}`;
+    if (shippingElement) shippingElement.textContent = `${formatPrice(shipping)}`;
+    if (totalElement) totalElement.textContent = `${formatPrice(total)}`;
 
     const checkoutBtn = document.getElementById('checkoutBtn');
     if (checkoutBtn) {
@@ -138,12 +138,12 @@ function renderCartItem(item) {
     
     return `
         <div class="cart-item" data-id="${item.id}">
-            <img src="${item.image || ''}" alt="${item.title || ''}" class="cart-item-image">
+            <img src="${item.images[0] || ''}" alt="${item.title || ''}" class="cart-item-image">
             <div class="cart-item-details">
                 <h3>${item.title || ''}</h3>
                 <div class="cart-item-price">
-                    <span class="discounted-price">$${formattedDiscount}</span>
-                    <span class="original-price">$${formattedOriginal}</span>
+                    <span class="discounted-price">&#x20b9;${formattedDiscount}</span>
+                    <span class="original-price">&#x20b9;${formattedOriginal}</span>
                 </div>
                 <div class="quantity-controls">
                     <button class="quantity-btn" onclick="updateCartQuantity(${item.id}, ${Math.max(0, (item.quantity || 0) - 1)})">-</button>
@@ -156,7 +156,7 @@ function renderCartItem(item) {
                 </button>
             </div>
             <div class="cart-item-total">
-                <strong>$${formattedTotal}</strong>
+                <strong>&#x20b9;${formattedTotal}</strong>
             </div>
         </div>
     `;

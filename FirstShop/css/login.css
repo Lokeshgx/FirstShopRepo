@@ -1,8 +1,137 @@
+/* Forgot Password Styles */
+.forgot-password-container {
+    min-height: calc(100vh - 60px);
+    background: #f5f7fa;
+    padding: 2rem 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.form-container {
+    background: white;
+    padding: 2.5rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    width: 100%;
+    max-width: 480px;
+    text-align: center;
+}
+
+.form-container h1 {
+    color: #333;
+    margin-bottom: 1rem;
+    font-size: 2rem;
+}
+
+.description {
+    color: #666;
+    margin-bottom: 2rem;
+    font-size: 1.1rem;
+    line-height: 1.5;
+}
+
+.forgot-password-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.input-with-icon {
+    position: relative;
+    margin-top: 0.5rem;
+}
+
+.input-with-icon i {
+    position: absolute;
+    left: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #666;
+}
+
+.input-with-icon input {
+    width: 100%;
+    padding: 1rem 1rem 1rem 2.8rem;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+
+.input-with-icon input:focus {
+    border-color: #2196F3;
+    box-shadow: 0 0 0 3px rgba(33, 150, 243, 0.1);
+    outline: none;
+}
+
+.submit-btn {
+    background: #2196F3;
+    color: white;
+    border: none;
+    padding: 1rem;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.submit-btn:hover {
+    background: #1976D2;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(33, 150, 243, 0.2);
+}
+
+.submit-btn:active {
+    transform: translateY(0);
+}
+
+.submit-btn:disabled {
+    background: #90CAF9;
+    cursor: not-allowed;
+    transform: none;
+    box-shadow: none;
+}
+
+.form-footer {
+    margin-top: 1rem;
+    color: #666;
+}
+
+.form-footer a {
+    color: #2196F3;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.form-footer a:hover {
+    text-decoration: underline;
+}
+
+.success-message {
+    text-align: center;
+    padding: 2rem;
+    color: #4CAF50;
+}
+
+.success-message i {
+    font-size: 4rem;
+    margin-bottom: 1rem;
+}
+
+.success-message p {
+    color: #666;
+    margin: 0.5rem 0;
+    font-size: 1.1rem;
+    line-height: 1.5;
+}
+
 /* Login Page Styles */
 .login-page {
     min-height: calc(100vh - 60px);
     background: #f5f7fa;
-    padding: 2rem 0;
+    padding: 1rem 0;
 }
 
 .login-container {
@@ -22,19 +151,19 @@
 /* Form Container */
 .login-form-container {
     flex: 1;
-    padding: 3rem;
+    padding: 2rem;
     max-width: 480px;
 }
 
 .form-header {
     text-align: center;
-    margin-bottom: 2.5rem;
+    margin-bottom: 1rem;
 }
 
 .form-header h1 {
     font-size: 2rem;
     color: #333;
-    margin-bottom: 0.5rem;
+    margin-bottom: 0;
 }
 
 .form-header p {
@@ -46,13 +175,13 @@
 .login-form {
     display: flex;
     flex-direction: column;
-    gap: 1.5rem;
+    gap: 0;
 }
 
 .form-group {
     display: flex;
     flex-direction: column;
-    gap: 0.5rem;
+    gap: 0;
 }
 
 label {
@@ -70,6 +199,11 @@ label {
 .input-group i {
     position: absolute;
     left: 1rem;
+    color: #666;
+}
+
+.input-group .toggle-password i {
+    position: sticky;
     color: #666;
 }
 
@@ -295,24 +429,22 @@ label {
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.6));
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: start;
     align-items: center;
     padding: 2rem;
     text-align: center;
-    color: white;
+    color: gray;
 }
 
 .image-overlay h2 {
-    font-size: 2.5rem;
-    margin-bottom: 1rem;
+    font-size: 2rem;
+    margin-bottom: 0;
 }
 
 .image-overlay p {
-    font-size: 1.2rem;
-    max-width: 400px;
+    font-size: 1.2rem;  
 }
 
 /* Form Validation */

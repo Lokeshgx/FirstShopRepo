@@ -71,7 +71,14 @@
                     </div>
                 </div>
 
+
                 <div class="form-group">
+                    <label for="profilePicture">Profile picture</label>
+                    <input type="file" id="images" name="images" accept="image/*" required single>
+                    <div id="imagePreview" class="image-preview"></div>
+                </div>
+
+             <!--   <div class="form-group">
                     <label for="profilePicture">Profile Picture</label>
                     <div class="profile-upload">
                         <input type="file" id="profilePicture" name="profilePicture" accept="image/*">
@@ -87,7 +94,7 @@
                             </button>
                         </div>
                     </div>
-                </div>
+                </div>  -->
 
                 <div class="form-group">
                     <label for="address">Address</label>
@@ -179,5 +186,50 @@
             console.log('Form submitted successfully');
         });
     </script>
+    <script>
+document.addEventListener('DOMContentLoaded', () => {
+    const imageInput = document.getElementById('images');
+    const imagePreview = document.querySelector('.image-preview');
+
+    // Handle image preview
+    let selectedFile = null;
+    imageInput.addEventListener('change', function(e) {
+        const file = e.target.files[0]; // Get only the first file
+        
+        // Clear preview
+        imagePreview.innerHTML = '';
+        
+        if (file && file.type.startsWith('image/')) {
+            selectedFile = file;
+            const previewContainer = document.createElement('div');
+            previewContainer.className = 'preview-item';
+            
+            const reader = new FileReader();
+            reader.onload = function(e) {
+                const img = document.createElement('img');
+                img.src = e.target.result;
+                img.alt = file.name;
+                
+                // Add remove button
+                const removeBtn = document.createElement('button');
+                removeBtn.innerHTML = '×';
+                removeBtn.className = 'remove-image';
+                removeBtn.onclick = function() {
+                    selectedFile = null;
+                    previewContainer.remove();
+                    // Clear the file input
+                    imageInput.value = '';
+                };
+                
+                previewContainer.appendChild(img);
+                previewContainer.appendChild(removeBtn);
+                imagePreview.appendChild(previewContainer);
+            }
+            reader.readAsDataURL(file);
+        }
+    });
+});
+    </script>
+   
 </body>
 </html>

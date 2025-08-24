@@ -151,6 +151,21 @@
     cursor: default;
 }
 
+
+.add-product-btn {
+    display: block;
+    width: 120px;
+    height: 35px;
+    background: #4E9CAF;
+    padding: 5px;
+    text-align: center;
+    border-radius: 8px;
+    color: white;
+    font-weight: bold;
+    line-height: 20px;
+}
+
+
 /* Mobile styles for collapsible sections */
 @media (max-width: 768px) {
     .mobile-collapsible {

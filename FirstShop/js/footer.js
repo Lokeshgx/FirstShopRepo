@@ -19,4 +19,3 @@ async function loadFooter() {
 
 // Load footer when DOM is ready
 document.addEventListener('DOMContentLoaded', loadFooter);
-

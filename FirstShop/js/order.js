@@ -46,17 +46,17 @@ function displayOrderSummary() {
             <img src="${item.image}" alt="${item.title}" class="order-item-image">
             <div class="order-item-details">
                 <div class="order-item-title">${item.title}</div>
-                <div class="order-item-price">$${formatPrice(item.discountedPrice)}</div>
+                <div class="order-item-price">&#x20b9;${formatPrice(item.discountedPrice)}</div>
                 <div class="order-item-quantity">Quantity: ${item.quantity}</div>
             </div>
         </div>
     `).join('');
 
     // Use the pre-calculated totals from checkout data
-    document.getElementById('subtotal').textContent = `$${formatPrice(checkoutData.subtotal)}`;
-    document.getElementById('shipping').textContent = `$${formatPrice(checkoutData.shipping)}`;
-    document.getElementById('tax').textContent = `$${formatPrice(calculateTax(checkoutData.subtotal))}`;
-    document.getElementById('total').textContent = `$${formatPrice(checkoutData.total + calculateTax(checkoutData.subtotal))}`;
+    document.getElementById('subtotal').textContent = `${formatPrice(checkoutData.subtotal)}`;
+    document.getElementById('shipping').textContent = `${formatPrice(checkoutData.shipping)}`;
+    document.getElementById('tax').textContent = `${formatPrice(calculateTax(checkoutData.subtotal))}`;
+    document.getElementById('total').textContent = `${formatPrice(checkoutData.total + calculateTax(checkoutData.subtotal))}`;
 }
 
 function updateOrderTotals(cart) {
@@ -65,10 +65,10 @@ function updateOrderTotals(cart) {
     const tax = calculateTax(subtotal);
     const total = subtotal + shipping + tax;
 
-    document.getElementById('subtotal').textContent = `$${formatPrice(subtotal)}`;
-    document.getElementById('shipping').textContent = `$${formatPrice(shipping)}`;
-    document.getElementById('tax').textContent = `$${formatPrice(tax)}`;
-    document.getElementById('total').textContent = `$${formatPrice(total)}`;
+    document.getElementById('subtotal').textContent = `${formatPrice(subtotal)}`;
+    document.getElementById('shipping').textContent = `${formatPrice(shipping)}`;
+    document.getElementById('tax').textContent = `${formatPrice(tax)}`;
+    document.getElementById('total').textContent = `${formatPrice(total)}`;
 }
 
 function calculateSubtotal(cart) {

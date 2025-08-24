@@ -44,8 +44,8 @@ function displayProductDetails(product) {
     
     // Update product info
     document.getElementById('productTitle').textContent = product.title;
-    document.getElementById('discountedPrice').textContent = `$${product.discountedPrice.toFixed(2)}`;
-    document.getElementById('originalPrice').textContent = `$${product.price.toFixed(2)}`;
+    document.getElementById('discountedPrice').textContent = `${product.discountedPrice.toFixed(2)}`;
+    document.getElementById('originalPrice').textContent = `${product.price.toFixed(2)}`;
     
     // Calculate and display discount percentage
     const discount = calculateDiscount(product.price, product.discountedPrice);
